@@ -94,17 +94,5 @@ int main()
     cout << "Top element of first queue after swapping-> " <<  first.top() << endl; 
     cout << "Top element of second queue after swapping-> " <<  second.top() << endl;
 
-
-
-
-    
-
-
-
-
-
-
-
-
     return 0;
 }
