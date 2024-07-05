@@ -64,15 +64,5 @@ int main()
     cout << "Age of student B "<< B.age << endl;
     cout << "Name of student B " << B.name << endl;
 
-
-
-
-
-
-
-
-
-
-
     return 0;
 }
