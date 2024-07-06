@@ -47,8 +47,11 @@ int main()
     //dynamic allocation or student pointer
     student *A = new student(2,23,"avni",'B',5,9.5);
 
+
     cout << "Name of student -> " << A->name << endl;
     cout << "Age of student-> " << A->age << endl;
+
+
     delete A;
 
     return 0;
