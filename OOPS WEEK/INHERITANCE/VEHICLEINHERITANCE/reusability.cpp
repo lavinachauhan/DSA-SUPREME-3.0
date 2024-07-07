@@ -3,7 +3,7 @@ using namespace std;
 
 
 //parent class or base class
-//all the data member and member functions are public
+
 class vehicle{
 
 public:
@@ -14,6 +14,11 @@ protected:
 int noOftyres;
 
 public:
+
+vehicle()
+{
+    cout << "Default constructor called of vehicle class" << endl;
+}
 
 string getmodel()
 {
@@ -36,10 +41,12 @@ void stop_engine()
 {
     cout << "Engine stop of " << name << endl;
 }
+
 ~vehicle()
 {
     cout << "Destructor called of vehicle class" << endl; 
 }
+
 };
 
 
@@ -53,6 +60,11 @@ class car:public vehicle{
     int speed;
 
     public:
+
+    car()
+    {
+        cout << "Default constructor called of car class" << endl;
+    }
 
     car(string _name, string _model, int _noOftyres, int _noOfDoors, int _speed):vehicle(_name,_model,_noOftyres)
     {
@@ -86,6 +98,39 @@ class car:public vehicle{
 
 };
 
+class motorcycle:public vehicle{
+
+    protected:
+    string colour;
+    string handlebartype;
+
+    public:
+
+    motorcycle()
+    {
+        cout << "Motorcycle constructor called" << endl;
+    }
+
+    motorcycle(string _name, string _model, int _noOftyres,string  _colour,string  _handlebartype):vehicle(_name,_model,_noOftyres)
+    {
+        cout << "Parametrised constructor called of motorcycle" << endl;
+        this->colour=_colour;
+        this->handlebartype=_handlebartype;
+
+    }
+    void wheel()
+    {
+        cout << "Wheels of motorcycle" << endl;
+    }
+
+    ~motorcycle()
+    {
+        cout << "Motorcycle destructor called" << endl;
+    }
+
+
+};
+
 int main()
 {
 
@@ -96,14 +141,17 @@ int main()
     A.start_AC();
     A.stop_engine();
     A.model();
-    vehicle V("Verna","xyz",4);
+    //vehicle V("Verna","xyz",4);
     //V.model();
     //A.model; //private member can not be accesssed directly they can be accessed using public getter
-    cout << "Accessing private member outside the class using getter-> " << A.getmodel() << endl;
-    A.tyrescount();
+   // cout << "Accessing private member outside the class using getter-> " << A.getmodel() << endl;
+   // A.tyrescount();
 
-
-
+    motorcycle M("BMW", "ABS", 2, "black", "200");
+    M.start_engine(); 
+    cout << "Name of motorcycle " << M.name << endl; 
+    M.stop_engine();
+    M.wheel();
 
     return 0;
 }
