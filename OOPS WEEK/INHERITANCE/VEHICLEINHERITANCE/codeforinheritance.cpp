@@ -134,6 +134,23 @@ class motorcycle:public vehicle{
 int main()
 {
 
+    
+    //IMPORTANT COMMENT 
+
+    //When the mode of inheritance is public then
+    //all the public member will visible as public and 
+    //protected members will visible as protected 
+    //and private member visible as private to derived class 
+    //we can access public members outside the class or in the main function 
+    
+    //When the mode of inheritance is protected then
+    // all the public,and protected members will visible as protected to derived class and it behave as protected in derived class
+    //we can not access them outside the class or in the main function 
+
+    //similarly if mode of inheritance is private then  
+    //all the public,and protected members will visible as private to derived class and it behave as private in derived class 
+    //and it can not accessible outside the class or in the main function
+
     car A("Verna", "ABS", 4, 4, 200);
 
     A.start_engine(); 
