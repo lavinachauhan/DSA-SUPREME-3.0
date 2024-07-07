@@ -56,9 +56,5 @@ int main()
     s1.setmarks(90);
     cout << "marks of student after setter -> "<<  s1.getmarks() << endl; 
     cout << "age of student "<< s1.getage() << endl;
-
-
-
-
     return 0;
 }

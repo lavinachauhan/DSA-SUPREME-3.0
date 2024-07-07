@@ -40,7 +40,6 @@ class HRmanager:public employee{
     {
         cout << "Employee is " << ename << endl;
 
-        HRduties();
     }
     void HRduties()
     {
@@ -64,5 +63,6 @@ class HRdirector:public HRmanager{
 int main()
 {
     HRdirector HR(101,"Lavina");
+    HR.HRduties();
     return 0;
 }
