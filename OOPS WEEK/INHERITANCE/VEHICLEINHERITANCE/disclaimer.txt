@@ -1,0 +1,4 @@
+This folder consists of inheritance code and in this folder.
+I take a example of vehicle and with the help of this example we understand the 
+concept of "mode of inheritance"
+next to this file a image is attatched by according to that file we code for the topis mode of inheritance.
