@@ -134,7 +134,7 @@ void deletionbyposition(mynode* &head, mynode* &tail, int position, int length)
         cout << "Linked list is empty" << endl;
     }
     //case-> 02 position == 1 deletion of head node
-    if(position == 1)
+    else if(position == 1)
     {
         mynode* nodetodelete = head;
         head = head->next;
@@ -146,26 +146,14 @@ void deletionbyposition(mynode* &head, mynode* &tail, int position, int length)
         delete nodetodelete;
     }
     //case-> 03 invalid position
-    if(position > length || position < 1)
+    else if(position > length || position < 1)
     {
         cout << "Invalid position" << endl;
     }
    
-    //case-> 04 deletion of middle nodes
-    mynode* temp = head;
-    for(int i = 0; i < position-2; i++)
-    {
-        temp = temp->next;
-    }
-    mynode* nodetodelete = temp->next;
-    mynode* forwardnode = nodetodelete->next;
-    temp->next = forwardnode;
-    nodetodelete->next = NULL;
-    delete nodetodelete;
+    //case-> 04 deletion of tail node or last node
 
-    //case-> 05 deletion of tail node or last node
-
-    if(position == length)
+    else if(position == length)
     {
         mynode* temp = head;
         for(int i = 0; i < position-2; i++)
@@ -177,6 +165,19 @@ void deletionbyposition(mynode* &head, mynode* &tail, int position, int length)
         temp->next = NULL;
         delete nodetodelete;
 
+    }
+    //case-> 05 deletion of middle nodes
+    else{
+    mynode* temp = head;
+    for(int i = 0; i < position-2; i++)
+    {
+        temp = temp->next;
+    }
+    mynode* nodetodelete = temp->next;
+    mynode* forwardnode = nodetodelete->next;
+    temp->next = forwardnode;
+    nodetodelete->next = NULL;
+    delete nodetodelete;
     }
 }
 
