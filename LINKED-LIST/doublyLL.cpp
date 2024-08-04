@@ -224,7 +224,7 @@ int main()
     // int index = findposition(head, target);
     // cout <<"1-> based indexing" << index;
     cout << "After deletion->" << endl;
-    deletion(head, tail, 1, size);
+    deletion(head, tail, 5, size);
     printList(head);
     return 0;
 }
