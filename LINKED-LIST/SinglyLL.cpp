@@ -64,7 +64,7 @@ void insert_at_position(int position, int &length, int value, mynode* &head, myn
     }
     mynode* newnode = new mynode(value);
     newnode-> next = temp->next;
-    temp-> next =newnode;
+    temp-> next = newnode;
     }
 }
 
@@ -264,7 +264,7 @@ int main()
    // deletionbyposition(head,tail,5, length);
    // print(head);
 
-    int value = 3;
+    int value = 100;
     int pos = deletionbyvalue(head, tail, value, length);
     deletionbyposition(head,tail,pos, length);
     print(head);
