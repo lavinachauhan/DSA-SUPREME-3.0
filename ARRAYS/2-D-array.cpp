@@ -187,8 +187,5 @@ int main()
     int col = 3;
     int target = 10;
     cout << "Element found or not in 2-D array -> " << findtarget(a, row, col, target);
-
-
-
     return 0;
 }

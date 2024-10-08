@@ -62,6 +62,7 @@ int main()
         cout << i.marks << " ";
     }
     cout << endl;
+    
     comparatorr comp;
     vector<int> v ={20,68,23,45};
     sort(v.begin(),v.end(),comp);
