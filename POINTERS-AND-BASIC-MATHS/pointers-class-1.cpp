@@ -10,6 +10,7 @@ int main()
     int a = 5;
     ptr = &a; //store address of variable a
 
+
     cout << "a ->" << a << endl;
     cout << "&a ->" << &a << endl;
     //cout << "*a" << *a << endl;  ->error

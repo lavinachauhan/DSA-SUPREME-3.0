@@ -118,6 +118,7 @@ int main()
 
     double drr[5] = {1.22, 45.666, 43, 2, 4};
     cout <<" size- > " << sizeof(drr)/sizeof(drr[0]) << endl;
+  
 
     //linear search in 1-D array
     int size = 5;
@@ -133,7 +134,6 @@ int main()
     {
         cout << arr[i] << " ";
     }
-
 
 
 
