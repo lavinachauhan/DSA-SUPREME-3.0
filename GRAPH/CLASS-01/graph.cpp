@@ -74,6 +74,55 @@ class Graph{
 
         }
     }
+
+    void bfsTraversal(int src){
+        queue<int> q;
+        unordered_map<int, bool> visited;
+
+        // maintain initial state
+        q.push(src);
+        visited[src] = true;
+
+        while(!q.empty()){
+            int front = q.front();
+            q.pop();
+            cout << front << " ";
+
+            // current node ko process kro
+            for(auto connectedNodes : adjList[front]){
+                int nodeVal = connectedNodes.first;
+                if(!visited[nodeVal]){
+                    q.push(nodeVal);
+                    visited[nodeVal] = true;
+                }
+            }
+        }
+    }
+
+        
+    void dfsHelper(int src, unordered_map<int, bool> &visited){
+        visited[src] = true;
+        cout << src << " ";
+
+         for(auto connectedNodes : adjList[src]){
+                int nodeVal = connectedNodes.first;
+                if(!visited[nodeVal]){
+                    dfsHelper(nodeVal, visited);
+                }
+            }
+    }
+
+    void dfsTraversal(int n){
+        unordered_map<int, bool> visited;
+
+        for(int src = 0; src < n; src++){
+            if(!visited[src]){
+                dfsHelper(src, visited);
+            }
+        }
+        
+
+    }
 };
 
 int main(){
@@ -91,14 +140,24 @@ int main(){
     // g.printGraph(n);
 
     // weighted directed graph
-    g.addEdge(0, 1, 2, 1);
-    g.addEdge(1, 2, 4, 1);
-    g.addEdge(2, 3, 5, 1);
-    g.addEdge(0, 3, 16, 1);
-    g.addEdge(2, 0, 17, 1);
 
-    int n = 4;
+    g.addEdge(0,3,3,1);
+    g.addEdge(0,5,3,1);
+    g.addEdge(0,2,3,1);
+    g.addEdge(2,5,3,1);
+    g.addEdge(3,5,3,1);
+    g.addEdge(5,4,3,1);
+    g.addEdge(5,6,3,1);
+    g.addEdge(4,1,3,1);
+    g.addEdge(6,1,3,1);
+
+    int n = 6;
     g.printGraph(n);
+    cout << "BFS tarversal: ";
+    g.bfsTraversal(0);
+
+    cout << endl << "DFS traversal: ";
+    g.dfsTraversal(n);
     
     return 0;
 }
