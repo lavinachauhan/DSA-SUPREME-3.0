@@ -141,20 +141,29 @@ int main(){
 
     // weighted directed graph
 
-    g.addEdge(0,3,3,1);
-    g.addEdge(0,5,3,1);
-    g.addEdge(0,2,3,1);
-    g.addEdge(2,5,3,1);
-    g.addEdge(3,5,3,1);
-    g.addEdge(5,4,3,1);
-    g.addEdge(5,6,3,1);
-    g.addEdge(4,1,3,1);
-    g.addEdge(6,1,3,1);
+    // g.addEdge(0,3,3,1);
+    // g.addEdge(0,5,3,1);
+    // g.addEdge(0,2,3,1);
+    // g.addEdge(2,5,3,1);
+    // g.addEdge(3,5,3,1);
+    // g.addEdge(5,4,3,1);
+    // g.addEdge(5,6,3,1);
+    // g.addEdge(4,1,3,1);
+    // g.addEdge(6,1,3,1);
+
+    g.addEdge(1,2,3,0);
+    g.addEdge(2,3,3,0);
+    g.addEdge(3,4,3,0);
+    g.addEdge(4,5,3,0);
+    g.addEdge(6,7,3,0);
+    g.addEdge(3,6,3,0);
+    g.addEdge(7,2,3,0);
+
 
     int n = 6;
     g.printGraph(n);
     cout << "BFS tarversal: ";
-    g.bfsTraversal(0);
+    g.bfsTraversal(n);
 
     cout << endl << "DFS traversal: ";
     g.dfsTraversal(n);
