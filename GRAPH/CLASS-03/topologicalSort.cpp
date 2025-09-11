@@ -81,28 +81,27 @@ int main(){
 
     // topological sort
     graph g;
+    // directed graph
     g.addEdge(2, 3, 1, 1);
     g.addEdge(3, 1, 1, 1);
     g.addEdge(4, 0, 1, 1);
     g.addEdge(4, 1, 1, 1);
     g.addEdge(5, 0, 1, 1);
     g.addEdge(5, 2, 1, 1);
-    // directed graph
-    // undirected graph
+
     int n = 6;
-    // unordered_map<int, bool> visited;
+    unordered_map<int, bool> visited;
     vector<int> ans;
-    // for(int i = 0; i <= n; i++){
-    //     if(visited[i] != true){
-    //         g.topologicalSortdfs(n, i, ans, visited);
-    //     }
-        
-    // }
+    for(int i = 0; i < n; i++){
+        if(visited[i] != true){
+            g.topologicalSortdfs(n, i, ans, visited);
+        }
+    }
 
     // cout << "Topological order using dfs" << endl;
-    cout << "Tolpological Order using bfs" << endl;
-    g.topologicalSortBfs(n, ans);
-    // reverse(ans.begin(), ans.end());
+    // cout << "Tolpological Order using bfs" << endl;
+    // g.topologicalSortBfs(n, ans);
+    reverse(ans.begin(), ans.end());
     for(int i = 0; i < ans.size(); i++){
         cout << ans[i] << " ";
     }
